@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <style type="text/css">
+            html,
+            body {
+                margin: 0;
+                overflow: hidden;
+                height: 100%;
+            }
+            
+            /* Scale canvas with resize attribute to full size */
+            canvas[resize] {
+                width: 100%;
+                height: 100%;
+            }
+            </style>
+            <link rel="stylesheet" href="patatap.css">
+<!-- Load the Paper.js library -->
+<script src="howler.js">
+
+</script>
+
+<script type="text/javascript" src="paper-full.js"></script>
+<script type="text/paperscript" canvas="canvas">
+    var sound = new Howl({
+        
+        src: ['Audio/bubbles.mp3']
+      });
+      
+      var sound2 = new Howl({
+        src: ['Audio/clay.mp3']
+      });
+
+      var keyData = {
+        a: {
+            color: "purple",
+            sound: new Howl({
+                src: ['Audio/bubbles.mp3']
+            })
+        },
+        s: {
+            color: "green",
+            sound: new Howl({
+                src: ['Audio/clay.mp3']
+              })
+        },
+        q: {
+            color: "orange",
+            sound: new Howl({
+                src: ['Audio/confetti.mp3']
+              })
+        },
+        w: {
+            color: "yellow",
+            sound: new Howl({
+                src: ['Audio/corona.mp3']
+              })
+        },
+        e: {
+            color: "blue",
+            sound: new Howl({
+                src: ['Audio/dotted-spiral.mp3']
+              })
+        },
+        r: {
+            color: "red",
+            sound: new Howl({
+                src: ['Audio/flash-1.mp3']
+              })
+        },
+        t:  {
+            color: "purple",
+            sound: new Howl({
+                src: ['Audio/flash-2.mp3']
+              })
+        },
+        y:  {
+            color: "brown",
+            sound: new Howl({
+                src: ['Audio/flash-3.mp3']
+              })
+        },
+    }
+    var circles = [];
+    function onKeyDown(event) {
+    if(keyData[event.key]){
+        var maxPoint = new Point(view.size.width, view.size.height);
+        var randomPoint = Point.random();
+        var point = maxPoint*randomPoint;
+        //Create new circle
+        var newCircle = new Path.Circle(point, 500);
+        //Set color of new circle
+        newCircle.fillColor = keyData[event.key].color;
+        circles.push(newCircle);
+    
+        keyData[event.key].sound.play();
+    }
+    
+    }
+
+    function onFrame(event) {
+ 
+        for(i=0; i<circles.length; i++){
+            circles[i].fillColor.hue += 1;
+            circles[i].scale(.9);
+        }
+    }
+</script>
+</head>
+<body>
+	<canvas id="canvas" resize></canvas>
+</body>
+</html>

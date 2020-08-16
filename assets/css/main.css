@@ -8604,3 +8604,7 @@ input, select, textarea {
 			.image{
 				margin: 2%;
 			}
+
+			html {
+				scroll-behavior: smooth;
+			  }

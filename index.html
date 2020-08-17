@@ -13,7 +13,32 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" 
       type="image/png" 
-      href="jleon1992.github.io/favicon.ico">
+	  href="jleon1992.github.io/favicon.ico">
+	  <script>
+
+		$(function(){
+		
+			$(document).on( 'scroll', function(){
+		
+				if ($(window).scrollTop() > 100) {
+					$('.scroll-top-wrapper').addClass('show');
+				} else {
+					$('.scroll-top-wrapper').removeClass('show');
+				}
+			});
+		
+			$('.scroll-top-wrapper').on('click', scrollToTop);
+		});
+		
+		function scrollToTop() {
+			verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+			element = $('body');
+			offset = element.offset();
+			offsetTop = offset.top;
+			$('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+		}
+		</script>
+	  <link rel="stylesheet" id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" media="screen">
 	</head>
 	<body class="is-preload">
 
@@ -109,6 +134,12 @@
 						<div class="inner" id='more-projects'>
 							<h2>Other Projects I am Proud of</h2>
 							<p>These are some projects along the way which demonstrate mastery over API calls using Javascript and React, and also show how to manage the responses received by those calls. These projects were also created on one single day.</p>
+							<div class="scroll-top-wrapper ">
+								<span class="scroll-top-inner">
+									<i class="fa fa-2x fa-arrow-circle-up"></i>
+								</span>
+							</div>
+							
 						</div>
 
 						<!-- Gallery -->

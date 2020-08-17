@@ -8608,3 +8608,8 @@ input, select, textarea {
 			html {
 				scroll-behavior: smooth;
 			  }
+			  a{
+				  color: purple;
+				  font-weight: bold;
+				  text-decoration: none;
+			  }

@@ -11,33 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="icon" 
-      type="image/png" 
-	  href="jleon1992.github.io/favicon.ico">
-	  <script>
-
-		$(function(){
-		
-			$(document).on( 'scroll', function(){
-		
-				if ($(window).scrollTop() > 100) {
-					$('.scroll-top-wrapper').addClass('show');
-				} else {
-					$('.scroll-top-wrapper').removeClass('show');
-				}
-			});
-		
-			$('.scroll-top-wrapper').on('click', scrollToTop);
-		});
-		
-		function scrollToTop() {
-			verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
-			element = $('body');
-			offset = element.offset();
-			offsetTop = offset.top;
-			$('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
-		}
-		</script>
+		<link rel="icon" type="image/png" href="jleon1992.github.io/favicon.ico">
+	 
 	  <link rel="stylesheet" id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" media="screen">
 	</head>
 	<body class="is-preload">
@@ -124,8 +99,9 @@
 							</ul>
 						</div>
 						<div class="image">
-							<a href='https://hangman-rho.vercel.app/' taget = '_blank'></a>
-							<img src="images/Screenshot (23).png" alt="WunderList 2.0" />
+							<a href='https://hangman-rho.vercel.app/' taget = '_blank'>
+								<img src="images/Screenshot (23).png" alt="WunderList 2.0" />
+							</a>	
 
 						</div>
 					</section>
